@@ -17,7 +17,7 @@ ExternalProject_Add(
     GIT_REPOSITORY
         https://github.com/abseil/abseil-cpp.git
     GIT_TAG
-        20190808
+        20211102.0
     CMAKE_ARGS
         -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
         -DCMAKE_BUILD_TYPE=Release
@@ -36,7 +36,7 @@ ExternalProject_Add(
     GIT_REPOSITORY
         https://github.com/aws/aws-sdk-cpp.git
     GIT_TAG
-        1.7.290
+        1.9.260
     CMAKE_ARGS
         -DBUILD_ONLY=s3
         -DCPP_STANDARD=17
@@ -55,7 +55,7 @@ ExternalProject_Add(
     GIT_REPOSITORY
         https://github.com/dmlc/dlpack.git
     GIT_TAG
-        0acb731e0e43d15deee27b66f10e4c5b4e667913
+        v0.6
     CMAKE_ARGS
         -DBUILD_MOCK=OFF
         -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
@@ -132,7 +132,7 @@ ExternalProject_Add(
     GIT_REPOSITORY
         https://github.com/google/protobuf.git
     GIT_TAG
-        v3.8.0
+        v3.20.1
     GIT_SHALLOW
         TRUE
     CONFIGURE_COMMAND
@@ -157,7 +157,7 @@ ExternalProject_Add(
     GIT_REPOSITORY
         https://github.com/pybind/pybind11.git
     GIT_TAG
-        v2.4.2
+        v2.9.2
     GIT_SHALLOW
         TRUE
     CMAKE_ARGS
@@ -169,9 +169,9 @@ ExternalProject_Add(
 )
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-    set(TIO_TBB_URL "https://github.com/intel/tbb/releases/download/2019_U8/tbb2019_20190605oss_lin.tgz")
+    set(TIO_TBB_URL "https://github.com/oneapi-src/oneTBB/releases/download/v2021.5.0/oneapi-tbb-2021.5.0-lin.tgz")
 elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
-    set(TIO_TBB_URL "https://github.com/intel/tbb/releases/download/2019_U8/tbb2019_20190605oss_mac.tgz")
+    set(TIO_TBB_URL "https://github.com/oneapi-src/oneTBB/releases/download/v2021.5.0/oneapi-tbb-2021.5.0-mac.tgz")
 else()
     message(FATAL_ERROR "Intel TBB is only supported on Linux and macOS.")
 endif()
